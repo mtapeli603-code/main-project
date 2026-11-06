@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+	color-scheme: light;
+	--brand-rose: #d66b86;
+	--brand-rose-dark: #9c3e5b;
+	--brand-baby-pink: #f7cbd7;
+	--brand-lilac: #d9c8ee;
+	--brand-lavender: #9c82bf;
+	--brand-cream: #fffaf6;
+	--brand-paper: #fffefd;
+	--brand-ink: #493944;
+	--brand-muted: #806f7a;
+	--brand-gold: #b98571;
+	--brand-font-display: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+	--brand-font-body: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+	--brand-font-script: "Snell Roundhand", "Brush Script MT", cursive;
+}
+
+@theme inline {
+	--color-rose: var(--brand-rose);
+	--color-rose-dark: var(--brand-rose-dark);
+	--color-baby-pink: var(--brand-baby-pink);
+	--color-lilac: var(--brand-lilac);
+	--color-lavender: var(--brand-lavender);
+	--color-cream: var(--brand-cream);
+	--color-paper: var(--brand-paper);
+	--color-ink: var(--brand-ink);
+	--color-muted: var(--brand-muted);
+	--color-gold: var(--brand-gold);
+	--font-display: var(--brand-font-display);
+	--font-body: var(--brand-font-body);
+	--font-script: var(--brand-font-script);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100%;
+	background: var(--brand-cream);
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	color: var(--brand-ink);
+	font-family: var(--brand-font-body);
+	background:
+		radial-gradient(ellipse at 9% 12%, rgb(247 203 215 / 28%), transparent 34rem),
+		radial-gradient(ellipse at 91% 87%, rgb(217 200 238 / 32%), transparent 35rem),
+		linear-gradient(145deg, #fffaf6 0%, #fbf8f6 54%, #f8f6fb 100%);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+	outline: 3px solid var(--brand-lavender);
+	outline-offset: 4px;
+}
+
+::selection {
+	color: var(--brand-rose-dark);
+	background: var(--brand-baby-pink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}

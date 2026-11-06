@@ -1,0 +1,563 @@
+.page {
+	display: grid;
+	flex: 1;
+	min-height: calc(100svh - 117px);
+	place-items: center;
+	padding: 38px 0 34px;
+	animation: stageEnter 460ms cubic-bezier(0.2, 0.72, 0.25, 1) both;
+}
+
+.content {
+	width: min(100%, 930px);
+	margin: 0 auto;
+	text-align: center;
+}
+
+.eyebrow {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 11px;
+	margin: 0 0 21px;
+	color: var(--brand-rose-dark);
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+}
+
+.eyebrow span {
+	width: 28px;
+	height: 1px;
+	background: var(--brand-gold);
+}
+
+.title {
+	max-width: 860px;
+	margin: 0 auto;
+	color: var(--brand-ink);
+	font-family: var(--brand-font-display);
+	font-size: 54px;
+	font-weight: 500;
+	line-height: 1.12;
+}
+
+.titleHeart {
+	display: inline-block;
+	margin-left: 9px;
+	font-family: var(--brand-font-body);
+	font-size: 0.55em;
+	vertical-align: 0.12em;
+}
+
+.introduction {
+	max-width: 690px;
+	margin: 21px auto 0;
+	color: var(--brand-muted);
+	font-size: 17px;
+	line-height: 1.7;
+}
+
+.sweets {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: start;
+	justify-content: center;
+	gap: clamp(17px, 4vw, 44px);
+	margin: 27px auto 3px;
+}
+
+.sweet {
+	display: grid;
+	min-width: 72px;
+	justify-items: center;
+	gap: 5px;
+	color: var(--brand-muted);
+	font-size: 11px;
+}
+
+.sweetArt {
+	display: grid;
+	width: 56px;
+	aspect-ratio: 1;
+	place-items: center;
+	border: 1px solid rgb(185 133 113 / 17%);
+	border-radius: 50%;
+	background: rgb(255 254 253 / 66%);
+	box-shadow: 0 7px 17px rgb(102 72 92 / 7%);
+	font-size: 28px;
+}
+
+.sweet:nth-child(2) .sweetArt,
+.sweet:nth-child(4) .sweetArt {
+	background: rgb(217 200 238 / 30%);
+}
+
+.sweetLabel {
+	white-space: nowrap;
+}
+
+.questionSurface {
+	width: min(100%, 710px);
+	margin: 34px auto 0;
+	padding: 25px clamp(18px, 4vw, 40px) 15px;
+	border: 1px solid rgb(185 133 113 / 19%);
+	border-radius: 8px;
+	background: rgb(255 254 253 / 58%);
+	box-shadow: 0 18px 48px rgb(105 76 96 / 8%), inset 0 1px 0 rgb(255 255 255 / 70%);
+	backdrop-filter: blur(12px);
+}
+
+.question {
+	margin: 0 0 19px;
+	color: var(--brand-ink);
+	font-family: var(--brand-font-display);
+	font-size: 24px;
+	line-height: 1.35;
+}
+
+.answerArea {
+	width: min(100%, 510px);
+	margin: 0 auto;
+}
+
+.choices {
+	display: grid;
+	grid-template-columns: minmax(185px, 220px) minmax(210px, 250px);
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+}
+
+.yesButton,
+.noButton {
+	display: inline-flex;
+	min-height: 54px;
+	align-items: center;
+	justify-content: center;
+	padding: 0 18px;
+	border-radius: 999px;
+	font: 700 12px/1.25 var(--brand-font-body);
+	letter-spacing: 0.035em;
+	text-align: center;
+	touch-action: manipulation;
+}
+
+.yesButton {
+	width: 100%;
+	border: 1px solid rgb(255 255 255 / 60%);
+	color: #fffefd;
+	background: linear-gradient(115deg, #8f6577, #a87d91 56%, #8d7a9e);
+	box-shadow: 0 11px 24px rgb(99 71 91 / 18%), inset 0 1px 0 rgb(255 255 255 / 34%);
+	cursor: pointer;
+	transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.yesButton:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 15px 28px rgb(99 71 91 / 24%), inset 0 1px 0 rgb(255 255 255 / 42%);
+	filter: saturate(1.08);
+}
+
+.yesButton:active {
+	transform: translateY(1px) scale(0.99);
+}
+
+.noLane {
+	position: relative;
+	width: 100%;
+	height: 66px;
+	border-radius: 999px;
+}
+
+.noButton {
+	position: absolute;
+	top: 6px;
+	left: 50%;
+	width: min(150px, 100%);
+	border: 1px solid rgb(156 130 191 / 37%);
+	color: var(--brand-lavender);
+	background: rgb(255 254 253 / 78%);
+	box-shadow: 0 6px 16px rgb(93 67 123 / 9%);
+	cursor: pointer;
+	transform: translateX(-50%);
+	transition: left 260ms cubic-bezier(0.18, 0.78, 0.2, 1), top 260ms cubic-bezier(0.18, 0.78, 0.2, 1), color 150ms ease;
+	user-select: none;
+}
+
+.noButton:hover {
+	color: var(--brand-rose-dark);
+}
+
+.noMessage {
+	min-height: 22px;
+	margin: 7px 0 0;
+	color: var(--brand-rose-dark);
+	font-family: var(--brand-font-script);
+	font-size: 17px;
+}
+
+.billPage {
+	padding-top: 25px;
+	padding-bottom: 22px;
+}
+
+.billContent {
+	width: min(100%, 850px);
+	margin: auto;
+	text-align: center;
+}
+
+.billPage .eyebrow {
+	margin-bottom: 14px;
+}
+
+.billPage .title {
+	font-size: 47px;
+	line-height: 1.08;
+}
+
+.revealArea {
+	display: grid;
+	min-height: 138px;
+	place-items: center;
+	margin-top: 8px;
+}
+
+.suspense {
+	display: grid;
+	justify-items: center;
+	gap: 9px;
+	color: var(--brand-muted);
+	font-family: var(--brand-font-script);
+	font-size: 19px;
+	animation: suspensePulse 1.2s ease-in-out infinite;
+}
+
+.suspense p {
+	margin: 0;
+}
+
+.suspenseSeal {
+	display: grid;
+	width: 46px;
+	aspect-ratio: 1;
+	place-items: center;
+	border: 1px solid rgb(156 130 191 / 32%);
+	border-radius: 50%;
+	color: var(--brand-lavender);
+	background: rgb(255 254 253 / 76%);
+	box-shadow: 0 8px 22px rgb(156 130 191 / 14%);
+	font-family: var(--brand-font-display);
+	font-size: 27px;
+	animation: suspenseTurn 1.6s ease-in-out infinite;
+}
+
+.suspenseDots {
+	display: flex;
+	gap: 6px;
+}
+
+.suspenseDots i {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: var(--brand-gold);
+	animation: dotPop 700ms ease-in-out infinite alternate;
+}
+
+.suspenseDots i:nth-child(2) {
+	animation-delay: 140ms;
+}
+
+.suspenseDots i:nth-child(3) {
+	animation-delay: 280ms;
+}
+
+.billReveal {
+	display: flex;
+	width: min(100%, 740px);
+	min-height: 94px;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+	padding: 18px 22px;
+	border: 1px solid rgb(185 133 113 / 27%);
+	border-radius: 10px;
+	color: #fffefd;
+	background: linear-gradient(115deg, #875f75, #a67891 55%, #8e7ba6);
+	box-shadow: 0 15px 34px rgb(99 71 91 / 20%), inset 0 1px 0 rgb(255 255 255 / 28%);
+	transform-origin: center;
+	animation: billStamp 620ms cubic-bezier(0.18, 0.8, 0.25, 1) both;
+}
+
+.billAnnouncement {
+	margin: 0;
+	font-family: var(--brand-font-display);
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 1.15;
+}
+
+.receiptMark {
+	flex: 0 0 auto;
+	color: rgb(255 255 255 / 72%);
+	font-family: var(--brand-font-display);
+	font-size: 30px;
+	transform: rotate(-12deg);
+}
+
+.receiptMark:last-child {
+	transform: rotate(12deg);
+}
+
+.billDetails {
+	animation: detailsArrive 500ms 120ms ease both;
+}
+
+.billMessage {
+	max-width: 720px;
+	margin: 4px auto 0;
+	color: var(--brand-ink);
+	font-size: 15px;
+	line-height: 1.65;
+}
+
+.billPage .questionSurface {
+	margin-top: 21px;
+	padding-top: 19px;
+}
+
+.billPage .question {
+	margin-bottom: 15px;
+	font-size: 22px;
+}
+
+.handoffPage {
+	min-height: calc(100svh - 117px);
+}
+
+.handoff {
+	width: min(100%, 650px);
+	margin: auto;
+	padding: 38px clamp(20px, 5vw, 48px);
+	border: 1px solid rgb(185 133 113 / 21%);
+	border-radius: 9px;
+	background: rgb(255 254 253 / 62%);
+	box-shadow: 0 16px 42px rgb(105 76 96 / 8%);
+	text-align: center;
+}
+
+.handoff .introduction {
+	margin-top: 13px;
+}
+
+@keyframes suspensePulse {
+	0%, 100% { opacity: 0.68; }
+	50% { opacity: 1; }
+}
+
+@keyframes suspenseTurn {
+	0%, 100% { transform: rotate(-8deg) translateY(0); }
+	50% { transform: rotate(8deg) translateY(-4px); }
+}
+
+@keyframes dotPop {
+	from { opacity: 0.35; transform: translateY(0); }
+	to { opacity: 1; transform: translateY(-5px); }
+}
+
+@keyframes billStamp {
+	0% { opacity: 0; transform: scale(0.7) rotate(-4deg); }
+	66% { opacity: 1; transform: scale(1.035) rotate(1deg); }
+	100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+@keyframes detailsArrive {
+	from { opacity: 0; transform: translateY(10px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stageEnter {
+	from { opacity: 0; transform: translateY(12px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+	.page {
+		min-height: calc(100svh - 100px);
+		padding: 32px 0 25px;
+	}
+
+	.content {
+		width: min(100%, 520px);
+	}
+
+	.eyebrow {
+		margin-bottom: 16px;
+		font-size: 9px;
+	}
+
+	.title {
+		font-size: 39px;
+		line-height: 1.13;
+	}
+
+	.introduction {
+		margin-top: 16px;
+		font-size: 15px;
+		line-height: 1.58;
+	}
+
+	.sweets {
+		gap: 13px;
+		margin-top: 22px;
+	}
+
+	.sweet {
+		min-width: 61px;
+		font-size: 10px;
+	}
+
+	.sweetArt {
+		width: 49px;
+		font-size: 25px;
+	}
+
+	.questionSurface {
+		margin-top: 26px;
+		padding: 22px 16px 13px;
+	}
+
+	.question {
+		margin-bottom: 17px;
+		font-size: 21px;
+	}
+
+	.choices {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 6px;
+	}
+
+	.yesButton {
+		width: min(100%, 330px);
+		min-height: 56px;
+		justify-self: center;
+	}
+
+	.noLane {
+		width: min(100%, 330px);
+		justify-self: center;
+	}
+
+	.billPage {
+		min-height: calc(100svh - 100px);
+		padding-block: 24px 18px;
+	}
+
+	.billPage .eyebrow {
+		margin-bottom: 12px;
+	}
+
+	.billPage .title {
+		font-size: 36px;
+		line-height: 1.1;
+	}
+
+	.revealArea {
+		min-height: 116px;
+		margin-top: 5px;
+	}
+
+	.suspense {
+		font-size: 17px;
+	}
+
+	.billReveal {
+		min-height: 82px;
+		gap: 8px;
+		padding: 14px 12px;
+	}
+
+	.billAnnouncement {
+		font-size: 26px;
+	}
+
+	.receiptMark {
+		font-size: 22px;
+	}
+
+	.billMessage {
+		font-size: 14px;
+		line-height: 1.55;
+	}
+
+	.billPage .questionSurface {
+		margin-top: 17px;
+		padding-top: 17px;
+	}
+
+	.billPage .question {
+		font-size: 20px;
+	}
+
+	.handoffPage {
+		min-height: calc(100svh - 100px);
+	}
+}
+
+@media (max-width: 360px) {
+	.page {
+		padding-block: 25px 20px;
+	}
+
+	.title {
+		font-size: 35px;
+	}
+
+	.introduction {
+		font-size: 14px;
+	}
+
+	.questionSurface {
+		padding-inline: 12px;
+	}
+
+	.sweets {
+		gap: 9px;
+	}
+
+	.billPage .title {
+		font-size: 32px;
+	}
+
+	.billAnnouncement {
+		font-size: 23px;
+	}
+
+	.receiptMark {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.page {
+		animation: none;
+	}
+
+	.yesButton,
+	.noButton {
+		transition-duration: 1ms;
+	}
+
+	.suspense,
+	.suspenseSeal,
+	.suspenseDots i,
+	.billReveal,
+	.billDetails {
+		animation: none;
+	}
+
+	.billReveal {
+		transform: none;
+	}
+}
